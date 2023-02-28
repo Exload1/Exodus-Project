@@ -12,3 +12,4 @@ C:\Users\Leonid\source\repos\Exodus 1.0\Exodus 1.0\bin\Debug\WeAreDevs_API.dll
 C:\Users\Leonid\source\repos\Exodus 1.0\Exodus 1.0\obj\Debug\Exodus 1.0.csproj.CopyComplete
 C:\Users\Leonid\source\repos\Exodus 1.0\Exodus 1.0\obj\Debug\Exodus_1._0.ScriptHub.resources
 C:\Users\Leonid\source\repos\Exodus 1.0\Exodus 1.0\obj\Debug\Exodus 1.0.csproj.AssemblyReference.cache
+C:\Users\Leonid\source\repos\Exodus 1.0\Exodus 1.0\obj\Debug\Exodus_1._0.Options.resources

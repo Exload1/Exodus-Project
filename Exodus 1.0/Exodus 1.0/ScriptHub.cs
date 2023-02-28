@@ -58,7 +58,11 @@ namespace Exodus_1._0
 
         private void ScriptHub_Load(object sender, EventArgs e)
         {
-            
+            this.ControlBox = false;
+
+            this.Text = String.Empty;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void button1_Click(object sender, EventArgs e)

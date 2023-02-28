@@ -19,8 +19,6 @@ namespace Exodus_1._0
 
         Point lastPoint;
 
-        public bool isScriptHubOpened = false;
-
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +26,11 @@ namespace Exodus_1._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            if (!Directory.Exists("Scripts"))
+            {
+                Directory.CreateDirectory("Scripts");
+            }
             scriptbox.Items.Clear();//Clear Items in the LuaScriptList
             Functions.PopulateListBox(scriptbox, "./Scripts", "*.txt");
             Functions.PopulateListBox(scriptbox, "./Scripts", "*.lua");
@@ -61,6 +64,11 @@ namespace Exodus_1._0
         private void openfile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            openFileDialog1.InitialDirectory = @".\";
+            openFileDialog1.Filter = "Txt files (*.txt)|*.txt|Lua files (*.lua*)|*.lua*";
+            openFileDialog1.FilterIndex = 2;
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 openFileDialog1.Title = "Open";
@@ -71,6 +79,14 @@ namespace Exodus_1._0
         private void savefile_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.InitialDirectory = @".\";
+            saveFileDialog1.Filter = "Txt files (*.txt)|*.txt|Lua files (*.lua*)|*.lua*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.FileName = "New Script";
+            saveFileDialog1.DefaultExt = "lua";
+            saveFileDialog1.AddExtension = true;
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 using (Stream s = File.Open(saveFileDialog1.FileName, FileMode.CreateNew))
@@ -123,7 +139,7 @@ namespace Exodus_1._0
 
         private void scriptbox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textbox.Text = File.ReadAllText($"./Scripts/{scriptbox.SelectedItem}");
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -146,6 +162,29 @@ namespace Exodus_1._0
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void scriptbox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textbox.Text = File.ReadAllText($"./Scripts/{scriptbox.SelectedItem}");
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Options openform = new Options();
+            openform.Show();
         }
     }
 }
