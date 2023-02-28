@@ -80,7 +80,7 @@ namespace Exodus_1._0
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            saveFileDialog1.InitialDirectory = @".\";
+            saveFileDialog1.InitialDirectory = "./";
             saveFileDialog1.Filter = "Txt files (*.txt)|*.txt|Lua files (*.lua*)|*.lua*";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.FileName = "New Script";
@@ -182,6 +182,22 @@ namespace Exodus_1._0
         }
 
         private void button2_Click_1(object sender, EventArgs e)
+        {
+            Options openform = new Options();
+            openform.Show();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             Options openform = new Options();
             openform.Show();

@@ -28,9 +28,7 @@ namespace Exodus_1._0
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false;
-            this.Text = String.Empty;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
 
         private void close_Click(object sender, EventArgs e)
